@@ -12,9 +12,9 @@ const Collections = () => {
                 <div>Find the best option for you</div>
             </div>
 
-            {products.state == "Pending" ? (
+            {products.state === "Pending" ? (
                 <div>Loading</div>
-            ) : products.state == "Success" ? (
+            ) : products.state === "Success" ? (
                 products.data.map((product) => <div>{product.model}</div>)
             ) : (
                 <div>Error loading collections</div>
