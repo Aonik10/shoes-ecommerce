@@ -1,0 +1,44 @@
+@import "../../../App.scss";
+
+@mixin margins {
+    margin: 20px 0;
+}
+
+.designs {
+    display: flex;
+    justify-content: space-around;
+    color: $font-color-dark;
+    max-width: 1400px;
+    margin: auto
+}
+
+.msgSection {
+    width: 500px
+}
+
+.mainMsg {
+    @include margins();
+    font-size: 60px;
+}
+
+.secondMsg {
+    @include margins();
+    font-size: 25px;
+    font-family: $font-family-secundary;
+}
+
+.btn {
+    @include margins();
+    border: solid 1px $font-color-dark; 
+    font-size: 20px;
+    padding: 10px 20px
+}
+
+.designsGrid {
+    @include margins();
+    display: grid;
+    grid-template-columns: 300px 300px;
+    grid-template-rows: 300px 300px; 
+    column-gap: 20px;
+    row-gap: 25px;
+}

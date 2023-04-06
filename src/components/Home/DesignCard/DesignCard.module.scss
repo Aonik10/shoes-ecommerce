@@ -1,0 +1,16 @@
+@import "../../../App.scss";
+
+.cardPhoto {
+
+    img {
+        width: 300px;
+        height: 280px;
+        object-fit: cover;
+    }
+}
+
+.data {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+}

@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import styles from "./App.scss";
+import NavBar from "./components/NavBar/NavBar";
+import Footer from "./components/Footer/Footer";
+import Home from "./components/Home/Home";
+import Login from "./components/Login/Login";
+import { createHashRouter, RouterProvider } from "react-router-dom";
+
+const router = createHashRouter(
+    [
+        { path: "/", element: AppContent(<Home />) },
+        { path: "/login", element: <Login /> },
+        { path: "/store", element: AppContent(<Home />) },
+        { path: "/men", element: AppContent(<Home />) },
+        { path: "/women", element: AppContent(<Home />) },
+        { path: "/about", element: AppContent(<Home />) },
+        { path: "/contact", element: AppContent(<Home />) },
+    ],
+    { path: "/*" }
+);
+
+function AppContent(component) {
+    return (
+        <div className={styles.App}>
+            <NavBar />
+            {component}
+            <Footer />
+        </div>
+    );
+}
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return <RouterProvider router={router} />;
 }
 
 export default App;

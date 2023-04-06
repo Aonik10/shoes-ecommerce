@@ -1,0 +1,20 @@
+@import '../../App.scss';
+
+.footer {
+    background-color: $bg-dark-color;
+    color: white;
+    text-align: center;
+}
+
+.socialMedia {
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+    margin: auto
+}
+
+.copyright {
+    font-family: $font-family-secundary;
+    padding: 50px 0 10px 0;
+    font-size: 14px;
+}

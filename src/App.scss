@@ -1,0 +1,20 @@
+$font-color-pink: #e56089;
+$font-color-dark: #20333f;
+$bg-yellow-color: #fff8bc;
+$bg-dark-color: #0f171c;
+$font-family-main: 'Anton', sans-serif;
+$font-family-secundary: 'Archivo Black', sans-serif;
+
+* {
+    font-family: $font-family-main;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    border: none;
+    background: none;
+    color: inherit;
+    cursor: pointer;
+}

@@ -1,0 +1,33 @@
+@import '../../App.scss';
+
+.navBar {
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    height: 50px;
+    padding: 0 25px;
+    background-color: $font-color-pink;
+    color: white;
+    top: 0%;
+    z-index: 1;
+}
+
+.navBarMenu {
+    display: flex;
+    align-items: center;
+
+    a {
+        margin-right: 30px;
+        font-size: 20px;
+        letter-spacing: 1.2px;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    img {
+        width: 150px;
+        border-bottom: 8px solid white;
+    }
+}

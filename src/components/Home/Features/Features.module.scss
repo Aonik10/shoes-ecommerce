@@ -1,0 +1,19 @@
+.features {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 600px 600px;
+    column-gap: 20px;
+    max-width: 1200px;
+    padding: 25px 0;
+    margin: auto;
+
+    div {
+
+        img {
+            width: 600px;
+            height: 800px;
+            object-fit: cover;
+        }
+        
+    }
+}
