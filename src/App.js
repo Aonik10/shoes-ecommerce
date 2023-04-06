@@ -3,13 +3,14 @@ import NavBar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
 import Home from "./components/Home/Home";
 import Login from "./components/Login/Login";
+import Collections from "./components/Collections/Collections";
 import { createHashRouter, RouterProvider } from "react-router-dom";
 
 const router = createHashRouter(
     [
         { path: "/", element: AppContent(<Home />) }, //
         { path: "/login", element: <Login /> },
-        { path: "/store", element: AppContent(<Home />) },
+        { path: "/collections", element: AppContent(<Collections />) },
         { path: "/men", element: AppContent(<Home />) },
         { path: "/women", element: AppContent(<Home />) },
         { path: "/about", element: AppContent(<Home />) },

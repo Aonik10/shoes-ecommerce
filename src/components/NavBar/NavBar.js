@@ -8,9 +8,9 @@ const NavBar = () => {
         <div className={styles.navBar}>
             <div className={styles.navBarMenu}>
                 <NavBarLink url="/" content="" logo={logo} />
-                <NavBarLink url="/collection" content="Collections" />
-                <NavBarLink url="/collection" content="Men" />
-                <NavBarLink url="/collection" content="Women" />
+                <NavBarLink url="/collections" content="Collections" />
+                <NavBarLink url="/collections" content="Men" />
+                <NavBarLink url="/collections" content="Women" />
                 <NavBarLink url="/about" content="About" />
                 <NavBarLink url="/contact" content="Contact us" />
             </div>
