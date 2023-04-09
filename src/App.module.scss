@@ -4,6 +4,7 @@ $bg-yellow-color: #fff8bc;
 $bg-dark-color: #0f171c;
 $font-family-main: 'Anton', sans-serif;
 $font-family-secundary: 'Archivo Black', sans-serif;
+$footer-height: 225px;
 
 * {
     font-family: $font-family-main;
@@ -17,4 +18,13 @@ button {
     background: none;
     color: inherit;
     cursor: pointer;
+}
+
+.App {
+    position: relative;
+    min-height: 100vh;
+}
+
+.contentWrap {
+    padding-bottom: $footer-height
 }

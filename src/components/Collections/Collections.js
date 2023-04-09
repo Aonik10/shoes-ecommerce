@@ -1,4 +1,7 @@
 import React from "react";
+import styles from "./Collections.module.scss";
+import Spinner from "./Spinner/Spinner";
+import Card from "./Card/Card";
 import { requestCollections } from "../../api/api";
 import { usePromise } from "../../hooks/usePromise";
 
@@ -11,11 +14,14 @@ const Collections = () => {
                 <h1>All Collections</h1>
                 <div>Find the best option for you</div>
             </div>
-
             {products.state === "Pending" ? (
-                <div>Loading</div>
+                <Spinner />
             ) : products.state === "Success" ? (
-                products.data.map((product) => <div>{product.model}</div>)
+                <div className={styles.cards}>
+                    {products.data.map((product) => (
+                        <Card product={product} />
+                    ))}
+                </div>
             ) : (
                 <div>Error loading collections</div>
             )}

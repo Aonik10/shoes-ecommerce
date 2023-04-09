@@ -1,9 +1,13 @@
-@import '../../App.scss';
+@import '../../App.module.scss';
 
 .footer {
     background-color: $bg-dark-color;
     color: white;
     text-align: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: $footer-height;
 }
 
 .socialMedia {

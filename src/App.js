@@ -1,4 +1,4 @@
-import styles from "./App.scss";
+import styles from "./App.module.scss";
 import NavBar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
 import Home from "./components/Home/Home";
@@ -22,8 +22,10 @@ const router = createHashRouter(
 function AppContent(component) {
     return (
         <div className={styles.App}>
-            <NavBar />
-            {component}
+            <div className={styles.contentWrap}>
+                <NavBar />
+                {component}
+            </div>
             <Footer />
         </div>
     );
