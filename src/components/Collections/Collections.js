@@ -9,10 +9,10 @@ const Collections = () => {
     let products = usePromise(requestCollections);
 
     return (
-        <div>
+        <div className={styles.collections}>
             <div>
                 <h1>All Collections</h1>
-                <div>Find the best option for you</div>
+                <h2>Find the best option for you</h2>
             </div>
             {products.state === "Pending" ? (
                 <Spinner />

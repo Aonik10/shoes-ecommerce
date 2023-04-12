@@ -1,3 +1,18 @@
+.collections {
+	margin: 25px;
+
+	h1 {
+
+	}
+
+	h2 {
+		font-weight: 400;
+		margin-bottom: 20px;
+	}
+
+
+}
+
 .cards {
     display: grid;
 	grid-template-columns: repeat(auto-fit, 400px); //minmax(400px, 1fr)

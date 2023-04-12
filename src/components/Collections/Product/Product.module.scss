@@ -1,0 +1,8 @@
+@import "./../../../App.module.scss";
+
+.product {
+    margin: 25px; // por ahora
+    display: flex;
+    justify-content: space-around;
+    background-color: $font-color-pink; //para poder verlo por ahora
+}

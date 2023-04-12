@@ -4,15 +4,17 @@ import Footer from "./components/Footer/Footer";
 import Home from "./components/Home/Home";
 import Login from "./components/Login/Login";
 import Collections from "./components/Collections/Collections";
+import Product from "./components/Collections/Product/Product";
 import { createHashRouter, RouterProvider } from "react-router-dom";
 
 const router = createHashRouter(
     [
-        { path: "/", element: AppContent(<Home />) }, //
+        { path: "/", element: AppContent(<Home />) },
         { path: "/login", element: <Login /> },
         { path: "/collections", element: AppContent(<Collections />) },
-        { path: "/men", element: AppContent(<Home />) },
-        { path: "/women", element: AppContent(<Home />) },
+        { path: "/collections/:id", element: AppContent(<Product />) },
+        { path: "/men", element: AppContent(<Collections />) },
+        { path: "/women", element: AppContent(<Collections />) },
         { path: "/about", element: AppContent(<Home />) },
         { path: "/contact", element: AppContent(<Home />) },
     ],

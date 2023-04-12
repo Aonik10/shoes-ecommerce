@@ -5,7 +5,11 @@ const NavBarLink = (props) => {
     return (
         <Link to={props.url}>
             {props.content}
-            {props.logo ? <img src={props.logo} alt="logo" /> : ""}
+            {props.logo ? (
+                <img src={props.logo} alt="logo" className="logo" />
+            ) : (
+                ""
+            )}
         </Link>
     );
 };

@@ -1,0 +1,27 @@
+@import './../../../App.module.scss';
+
+.userMenu {
+    position: absolute;
+    right: 0%;
+    background-color: $font-color-pink;
+    height: 100vh;
+    width: 250px;
+    padding: 50px 25px;
+    font-size: 22px;
+    z-index: -1;
+    transform: translateX(100%);
+    transition: transform 500ms
+}
+
+.slideIn {
+    transform: translateX(0)
+}
+
+.userBtn {
+
+    .profilePhoto {
+        width: 40px;
+        border-radius: 50%;
+        border-bottom: none;
+    }
+}
