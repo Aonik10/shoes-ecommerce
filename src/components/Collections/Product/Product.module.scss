@@ -1,8 +1,128 @@
 @import "./../../../App.module.scss";
 
+$photosWidth: 160px;
+
+@function mainPhotoWidth($value) {
+    @return $value * 4
+};
+
+@mixin marginPhotos {
+    margin: 5px 25px;
+}
+
 .product {
     margin: 25px; // por ahora
     display: flex;
-    justify-content: space-around;
-    background-color: $font-color-pink; //para poder verlo por ahora
+    justify-content: center;
+    background-color: white;
 }
+
+.mainPhoto {
+
+    @include marginPhotos();
+
+    img {
+        width: mainPhotoWidth($photosWidth);
+        border-radius: 25px 0;
+        box-shadow: 3px 3px 5px 1px rgba(0, 0, 0, 0.2);
+    } 
+}
+
+.allPhotos {
+    
+    @include marginPhotos();
+
+    img {
+        width: $photosWidth;
+        box-shadow: 3px 3px 5px 1px rgba(0, 0, 0, 0.2);
+    }
+}
+
+.infoContainer {
+    @include marginPhotos();
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 350px;
+    height: mainPhotoWidth($photosWidth);
+    min-width: 300px;
+    color: $bg-dark-color;
+
+    .information {
+        
+        text-transform: uppercase;
+
+        .genderRating {
+            display:flex;
+            justify-content: space-between;
+    
+            .gender {
+                font-style: italic;
+            }
+    
+            .rating {
+    
+                img {
+                    filter: $filter-bg-dark-color
+                }
+            }
+        }
+
+        h1 {
+            font-size: 45px;
+        }
+        
+        p {
+            opacity: 0.8;
+            margin-bottom: 25px;
+        }
+
+        h2 {
+            margin-bottom: 15px;
+        }
+    
+        .sizes {
+    
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            grid-auto-rows: 40px;
+            
+            .size {
+                border: solid 1px;
+                text-align: center;
+    
+                &:hover {
+                    color: white;
+                    background-color: $bg-dark-color;
+                }
+            }
+    
+            .selected {
+                color: white;
+                background-color: $bg-dark-color;
+            }
+            
+            .soldOut {
+                text-decoration: line-through;
+                opacity: 0.5;
+
+                &:hover {
+                    color: $bg-dark-color;
+                    background-color: white;
+                }
+            }
+        }
+
+        .lastAdvice {
+            margin-top: 15px;
+            color: $error-color;
+        }
+    }
+
+    .btns {
+        display: flex;
+    }
+}
+
+

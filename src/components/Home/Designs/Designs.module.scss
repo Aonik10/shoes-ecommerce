@@ -9,36 +9,42 @@
     justify-content: space-around;
     color: $font-color-dark;
     max-width: 1400px;
-    margin: auto
-}
+    margin: auto;
 
-.msgSection {
-    width: 500px
-}
+    .msgSection {
+        width: 500px;
+    }
 
-.mainMsg {
-    @include margins();
-    font-size: 60px;
-}
+    .mainMsg {
+        @include margins();
+        font-size: 60px;
+    }
 
-.secondMsg {
-    @include margins();
-    font-size: 25px;
-    font-family: $font-family-secundary;
-}
+    .secondMsg {
+        @include margins();
+        margin-bottom: 40px;
+        font-size: 25px;
+        font-family: $font-family-secundary;
+    }
 
-.btn {
-    @include margins();
-    border: solid 1px $font-color-dark; 
-    font-size: 20px;
-    padding: 10px 20px
-}
+    .btn {
+        @include margins();
+        color: $font-color-dark;
+        border: solid 2px $font-color-dark; 
+        font-size: 20px;
+        padding: 10px 20px;
 
-.designsGrid {
-    @include margins();
-    display: grid;
-    grid-template-columns: 300px 300px;
-    grid-template-rows: 300px 300px; 
-    column-gap: 20px;
-    row-gap: 25px;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+    .designsGrid {
+        @include margins();
+        display: grid;
+        grid-template-columns: 300px 300px;
+        grid-template-rows: 300px 300px; 
+        column-gap: 20px;
+        row-gap: 25px;
+    }
 }

@@ -1,0 +1,25 @@
+.AddToCart {
+    border: solid 2px;
+    padding: 5px 25px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+
+    span {
+        text-align: left;
+        margin-left: 10px;
+    }
+}
+
+.AddToFav {
+    border: solid 2px;
+    padding: 5px 25px;
+    width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+}
+

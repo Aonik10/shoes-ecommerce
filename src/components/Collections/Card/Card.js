@@ -1,15 +1,9 @@
 import React, { useState } from "react";
 import styles from "./Card.module.scss";
+import { Link } from "react-router-dom";
 
-import { useLocation, Link } from "react-router-dom";
-
-const Card = (props) => {
-    const product = props.product;
+const Card = ({ product }) => {
     const [hovering, setHovering] = useState(false);
-    const location = useLocation().pathname.substring(1);
-    if (location !== "collections") {
-        if (product.gender !== location) return;
-    }
 
     return (
         // mi duda ahora es, como paso una propiedad por medio de un link al component Product

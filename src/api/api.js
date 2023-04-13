@@ -1,5 +1,7 @@
 const urlServer = "http://localhost:4000";
 const collectionsPath = "/collections";
+const menPath = "/men";
+const womenPath = "/women";
 const loginPath = "/login";
 
 function wait(ms) {
@@ -13,7 +15,7 @@ async function request(url) {
     let status = response.status;
     if (status > 299) throw new Error("Invalid status: " + status);
     const data = await response.json();
-    await wait(1000);
+    await wait(Math.random() * 2000);
     return data;
 }
 
@@ -32,7 +34,23 @@ async function postRequest(url, body) {
 }
 
 export async function requestCollections() {
-    return request(urlServer + collectionsPath);
+    let collections = request(urlServer + collectionsPath);
+    return collections;
+}
+
+export async function requestMen() {
+    let collections = request(urlServer + menPath);
+    return collections;
+}
+
+export async function requestWomen() {
+    let collections = request(urlServer + womenPath);
+    return collections;
+}
+
+export async function requestProduct(id) {
+    let product = request(urlServer + collectionsPath + "/" + id);
+    return product;
 }
 
 export async function login(body) {
