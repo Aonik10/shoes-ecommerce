@@ -19,7 +19,7 @@ const NavBar = () => {
                 <NavBarLink url="/contact" content="Contact us" />
             </div>
             <div className={styles.navBarMenu}>
-                <NavBarLink url="/" content="Carrito" />
+                <NavBarLink url="/cart" content="Cart" />
                 {session.logged ? (
                     <UserBtn data={session.data} />
                 ) : (

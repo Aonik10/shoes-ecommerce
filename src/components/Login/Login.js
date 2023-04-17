@@ -20,7 +20,6 @@ const Login = () => {
         };
         try {
             let state = await login(body);
-            console.log(state);
             if (state.status === "Success") {
                 dispatch(sessionLogin({ logged: true, data: state.data }));
                 navigate("/");

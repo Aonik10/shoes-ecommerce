@@ -7,6 +7,7 @@ import Collections from "./components/Collections/Collections";
 import Product from "./components/Collections/Product/Product";
 import {
     createHashRouter,
+    Outlet,
     RouterProvider,
     useNavigation,
 } from "react-router-dom";
@@ -17,86 +18,65 @@ import {
     requestWomen,
 } from "./api/api";
 import Spinner from "./components/Collections/Spinner/Spinner";
+import Error from "./components/Error/Error";
 
-const router = createHashRouter(
+export const router = createHashRouter(
     [
         {
             path: "/",
-            element: (
-                <AppContent>
-                    <Home />
-                </AppContent>
-            ),
-            //children: []
+            element: <AppContent />,
+            errorElement: <Error />,
+            children: [
+                {
+                    path: "",
+                    element: <Home />,
+                },
+                {
+                    path: "collections",
+                    element: <Collections />,
+                    loader: requestCollections,
+                },
+                {
+                    path: "collections/:id",
+                    element: <Product />,
+                    loader: async ({ params }) => {
+                        const { id } = params;
+                        return requestProduct(id);
+                    },
+                },
+                {
+                    path: "men",
+                    element: <Collections />,
+                    loader: requestMen,
+                },
+                {
+                    path: "women",
+                    element: <Collections />,
+                    loader: requestWomen,
+                },
+                {
+                    path: "about",
+                    element: <Home />,
+                },
+                {
+                    path: "contact",
+                    element: <Home />,
+                },
+            ],
         },
         { path: "/login", element: <Login /> },
-        {
-            path: "/collections",
-            element: (
-                <AppContent>
-                    <Collections />
-                </AppContent>
-            ),
-            loader: requestCollections,
-        },
-        {
-            path: "/collections/:id",
-            element: (
-                <AppContent>
-                    <Product />
-                </AppContent>
-            ),
-            loader: async ({ params }) => {
-                const { id } = params;
-                return requestProduct(id);
-            },
-        },
-        {
-            path: "/men",
-            element: (
-                <AppContent>
-                    <Collections />
-                </AppContent>
-            ),
-            loader: requestMen,
-        },
-        {
-            path: "/women",
-            element: (
-                <AppContent>
-                    <Collections />
-                </AppContent>
-            ),
-            loader: requestWomen,
-        },
-        {
-            path: "/about",
-            element: (
-                <AppContent>
-                    <Home />
-                </AppContent>
-            ),
-        },
-        {
-            path: "/contact",
-            element: (
-                <AppContent>
-                    <Home />
-                </AppContent>
-            ),
-        },
     ],
     { path: "/*" }
 );
 
-function AppContent({ children }) {
+function AppContent() {
     let { state } = useNavigation();
     //devuelve varias cosas del estado de react router
     return (
         <div className={styles.App}>
             <div className={styles.contentWrap}>
                 <NavBar />
-                {state === "loading" ? <Spinner /> : children}
+                {state === "loading" ? <Spinner /> : <Outlet />}
             </div>
             <Footer />
         </div>
