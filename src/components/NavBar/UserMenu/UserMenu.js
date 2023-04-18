@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import { sessionLogout } from "../../../features/sessionSlice";
 import { logout } from "../../../api/api";
 
-function UserMenu(props) {
+function UserMenu({ name }) {
     const dispatch = useDispatch();
 
     const handleLogout = () => {
@@ -15,7 +15,9 @@ function UserMenu(props) {
 
     return (
         <div className={styles.menu}>
-            <p>{"Hi " + props.name + "!"}</p>
+            <div className={styles.menuHeader}>
+                <p>{"Hi " + name + "!"}</p>
+            </div>
             <li>
                 <NavBarLink url="/collections" content="Purchases" />
             </li>

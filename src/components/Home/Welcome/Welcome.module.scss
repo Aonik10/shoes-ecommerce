@@ -1,24 +1,27 @@
 @import "../../../App.module.scss";
 
 .welcome {
-    background-image: url('./pexels-jeshootscom-7432.jpg');
-    background-size: cover;
-    height: 100vh;
-    max-height: 800px;
     position: relative;
+    padding-bottom: 11vw;
+    background-color: $bg-dark-color;
+
+
+    img {
+        width: 100vw;
+    }
 }
 
 .welcomeHeader {
     position: absolute;
     color: $font-color-dark;
-    width: 600px;
+    width: 40vw;
     top: 5%;
     right: 5%
 }
 
 .mainMsg {
-    font-size: 90px;
-    line-height: 95px;
+    font-size: 6vw;
+    line-height: 6vw;
 }
 
 .colored {
@@ -27,6 +30,6 @@
 
 .secondMsg {
     margin-top: 10px;
-    font-size: 25px;
+    font-size: 2vw;
     color: $font-color-pink
 }

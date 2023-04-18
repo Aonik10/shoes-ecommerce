@@ -1,5 +1,5 @@
 .collections {
-	margin: 25px;
+	padding: 25px;
 
 	h1 {
 
@@ -13,10 +13,32 @@
 
 }
 
+
+.cards {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	column-gap: 10px;
+	grid-template-rows: auto;
+}
+
+@media screen and (max-width: 1024px) {
+	.cards {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+@media screen and (max-width: 760px) {
+	.cards {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+/*
 .cards {
     display: grid;
 	grid-template-columns: repeat(auto-fit, 400px); //minmax(400px, 1fr)
 	grid-auto-rows: 1fr;
 	column-gap: 10px;
 	row-gap: 1px;
+	margin: auto
 }
+*/

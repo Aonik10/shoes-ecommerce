@@ -7,12 +7,14 @@ import { addToCart } from "../../api/api";
 export function AddToCart({ id, size }) {
     const handleClick = () => {
         let body = { id, size };
-        console.log(body);
         addToCart(body);
     };
 
     return (
-        <button className={styles.AddToCart} onClick={handleClick}>
+        <button
+            className={`${styles.AddToCart} ${styles.btnEffect}`}
+            onClick={handleClick}
+        >
             <img src={cart} alt="" />
             <span>Add to Cart</span>
         </button>
@@ -21,7 +23,7 @@ export function AddToCart({ id, size }) {
 
 export function AddtoFav() {
     return (
-        <button className={styles.AddToFav}>
+        <button className={`${styles.AddToFav} ${styles.btnEffect}`}>
             <img src={heart} alt="" />
         </button>
     );

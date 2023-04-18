@@ -3,11 +3,10 @@
 .navBar {
     display: flex;
     justify-content: space-between;
-    position: sticky;
     height: 50px;
     padding: 0 25px;
-    background-color: $font-color-pink;
-    color: white;
+    background-color: white;
+    color: $bg-dark-color;
     top: 0%;
     z-index: 1;
 }
@@ -17,17 +16,22 @@
     align-items: center;
 
     a {
+        font-family: $font-family-terciary;
         margin-right: 30px;
+        min-width: fit-content;
         font-size: 20px;
         letter-spacing: 1.2px;
+        color: $font-color-dark;
+        text-decoration: none;
 
         &:hover {
-            text-decoration: underline;
+            border-bottom: 5px inset $bg-dark-color ;
         }
     }
 
-    img {
+    .logo {
         width: 150px;
-        border-bottom: 8px solid white;
+        padding-top: 8px;
+        
     }
 }

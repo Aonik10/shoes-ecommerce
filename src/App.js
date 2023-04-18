@@ -5,6 +5,7 @@ import Home from "./components/Home/Home";
 import Login from "./components/Login/Login";
 import Collections from "./components/Collections/Collections";
 import Product from "./components/Collections/Product/Product";
+import About from "./components/About/About";
 import {
     createHashRouter,
     Outlet,
@@ -19,6 +20,7 @@ import {
 } from "./api/api";
 import Spinner from "./components/Collections/Spinner/Spinner";
 import Error from "./components/Error/Error";
+import Cart from "./components/Cart/Cart";
 
 export const router = createHashRouter(
     [
@@ -30,6 +32,7 @@ export const router = createHashRouter(
                 {
                     path: "",
                     element: <Home />,
+                    loader: requestCollections,
                 },
                 {
                     path: "collections",
@@ -56,11 +59,15 @@ export const router = createHashRouter(
                 },
                 {
                     path: "about",
-                    element: <Home />,
+                    element: <About />,
                 },
                 {
                     path: "contact",
-                    element: <Home />,
+                    element: <About />,
+                },
+                {
+                    path: "cart",
+                    element: <Cart />,
                 },
             ],
         },

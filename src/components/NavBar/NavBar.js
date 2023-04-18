@@ -2,7 +2,7 @@ import React from "react";
 import NavBarLink from "./NavBarLink/NavBarLink";
 import UserBtn from "./UserBtn/UserBtn";
 import styles from "./NavBar.module.scss";
-import logo from "./logo-footprints-sin-fondo.png";
+import logo from "./logo-footprints.png";
 import { useSelector } from "react-redux";
 
 const NavBar = () => {

@@ -8,17 +8,37 @@
     bottom: 0;
     width: 100%;
     height: $footer-height;
+
+    .socialMedia {
+        display: flex;
+        justify-content: center;
+        margin: 10px auto;
+    
+        span {
+            margin-left: 25px;
+            padding: 6px;
+            background-color: white;
+            border-radius: 50%;
+
+            svg {
+                width: 30px;
+                height: 30px;
+                cursor: pointer;
+                transition: transform 200ms;
+    
+                &:hover {
+                    transform: scale(1.05);
+                }
+            }
+            
+        }
+     }
+    
+    .copyright {
+        margin-top: 8px;
+        font-family: 'Titillium Web', sans-serif;
+        font-size: 14px;
+    }
 }
 
-.socialMedia {
-    display: flex;
-    justify-content: space-between;
-    width: 200px;
-    margin: auto
-}
 
-.copyright {
-    font-family: $font-family-secundary;
-    padding: 50px 0 10px 0;
-    font-size: 14px;
-}

@@ -1,15 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import styles from "../NavBar.module.scss";
 
-const NavBarLink = (props) => {
+const NavBarLink = ({ url, content, logo }) => {
     return (
-        <Link to={props.url}>
-            {props.content}
-            {props.logo ? (
-                <img src={props.logo} alt="logo" className="logo" />
-            ) : (
-                ""
-            )}
+        <Link to={url}>
+            {content}
+            {logo ? <img src={logo} alt="logo" className={styles.logo} /> : ""}
         </Link>
     );
 };

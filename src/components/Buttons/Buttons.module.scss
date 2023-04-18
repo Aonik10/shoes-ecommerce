@@ -1,11 +1,18 @@
+@import "../../App.module.scss";
+
 .AddToCart {
-    border: solid 2px;
+    border: solid 2px $bg-dark-color;
     padding: 5px 25px;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 5px;
+    transition: color 200ms, background-color 200ms;
+
+    img {
+        transition: filter 200ms;
+    }
 
     span {
         text-align: left;
@@ -14,12 +21,23 @@
 }
 
 .AddToFav {
-    border: solid 2px;
+    border: solid 2px $bg-dark-color;
     padding: 5px 25px;
     width: 80px;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 5px;
+    transition: color 200ms, background-color 200ms;
 }
 
+.btnEffect:hover {
+    background-color: $bg-dark-color;
+    color: white;
+    transition: color 200ms, background-color 200ms;
+
+    img {
+        filter: $filter-to-white;
+        transition: all 200ms;
+    }
+}

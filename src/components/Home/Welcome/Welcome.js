@@ -1,9 +1,11 @@
 import React from "react";
 import styles from "./Welcome.module.scss";
+import background from "./pexels-jeshootscom-7432.jpg";
 
 const Welcome = () => {
     return (
         <div className={styles.welcome}>
+            <img src={background} alt="" />
             <div className={styles.welcomeHeader}>
                 <div className={styles.mainMsg}>
                     YOUR

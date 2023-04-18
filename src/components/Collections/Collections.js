@@ -7,7 +7,6 @@ const Collections = () => {
     // https://beta.reactrouter.com/en/dev/guides/deferred#the-problem
     let products = useLoaderData();
     // let products = useMemo(() => requestCollections(), []);
-    console.log(products);
 
     return (
         <div className={styles.collections}>

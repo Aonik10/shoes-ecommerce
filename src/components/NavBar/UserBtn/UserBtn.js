@@ -2,9 +2,9 @@ import React from "react";
 import styles from "./UserBtn.module.scss";
 import UserMenu from "../UserMenu/UserMenu";
 import { useState } from "react";
+import Avatar from "antd/es/avatar/avatar";
 
-const UserBtn = (props) => {
-    const data = props.data;
+const UserBtn = ({ data }) => {
     let [viewMenu, setViewMenu] = useState(false);
 
     return (
@@ -16,16 +16,25 @@ const UserBtn = (props) => {
             >
                 {<UserMenu name={data.name} />}
             </div>
-            <button className={styles.userBtn}>
+            <Avatar
+                className={styles.userBtn}
+                src={data.profilePhoto}
+                shape="square"
+                draggable={false}
+                size={"large"}
+                onClick={() => setViewMenu(!viewMenu)}
+            />
+        </div>
+    );
+};
+
+export default UserBtn;
+
+/*<button className={styles.userBtn}>
                 <img
                     className={styles.profilePhoto}
                     src={data.profilePhoto}
                     alt=""
                     onClick={() => setViewMenu(!viewMenu)}
                 />
-            </button>
-        </div>
-    );
-};
-
-export default UserBtn;
+            </button>*/

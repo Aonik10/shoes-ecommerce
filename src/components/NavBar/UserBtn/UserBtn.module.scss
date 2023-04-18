@@ -1,14 +1,19 @@
 @import './../../../App.module.scss';
 
+.header {
+    display: flex;
+}
+
 .userMenu {
+    color: white;
     position: absolute;
     right: 0%;
-    background-color: $font-color-pink;
-    height: 100vh;
+    background-color: $bg-dark-color;
+    height: 99%;
     width: 250px;
-    padding: 50px 25px;
+    padding: 10px 25px;
     font-size: 22px;
-    z-index: -1;
+    z-index: 1;
     transform: translateX(100%);
     transition: transform 500ms
 }
@@ -18,10 +23,5 @@
 }
 
 .userBtn {
-
-    .profilePhoto {
-        width: 40px;
-        border-radius: 50%;
-        border-bottom: none;
-    }
+    z-index: 1;
 }
