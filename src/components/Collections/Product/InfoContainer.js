@@ -43,8 +43,8 @@ function InfoContainer({ data }) {
                 </div>
             </div>
             <div className={styles.btns}>
-                <AddToCart id={data.id} size={btnKey} />
-                <AddtoFav id={data.id} />
+                <AddToCart id={data._id} size={btnKey} />
+                <AddtoFav id={data._id} />
             </div>
         </div>
     );

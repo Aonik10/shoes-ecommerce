@@ -1,7 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 let loggedValue = JSON.parse(localStorage.getItem("data"));
-console.log(loggedValue);
 
 const initialState = {
     logged: loggedValue?.logged ?? false,

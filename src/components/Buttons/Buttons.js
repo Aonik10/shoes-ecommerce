@@ -3,11 +3,15 @@ import styles from "./Buttons.module.scss";
 import cart from "./shopping-cart.svg";
 import heart from "./heart.svg";
 import { addToCart } from "../../api/api";
+import { useNavigate } from "react-router-dom";
 
 export function AddToCart({ id, size }) {
+    let navigate = useNavigate();
+
     const handleClick = () => {
         let body = { id, size };
         addToCart(body);
+        navigate("/cart");
     };
 
     return (

@@ -18,14 +18,20 @@
     a {
         font-family: $font-family-terciary;
         margin-right: 30px;
-        min-width: fit-content;
         font-size: 20px;
         letter-spacing: 1.2px;
         color: $font-color-dark;
         text-decoration: none;
+    }
 
-        &:hover {
-            border-bottom: 5px inset $bg-dark-color ;
+    .menuLink {
+        min-width: 550px;
+        a:hover {
+            border-bottom: $font-color-dark 5px solid;
+        }
+
+        .actualLink {
+            border-bottom: $font-color-dark 5px solid; 
         }
     }
 
@@ -33,5 +39,14 @@
         width: 150px;
         padding-top: 8px;
         
+    }
+
+    .shoppingCart {
+        margin: 25px;
+
+        svg {
+            width: 25px;
+            height: 25px;
+        }
     }
 }

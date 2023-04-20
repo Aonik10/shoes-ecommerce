@@ -1,15 +1,63 @@
 import React from "react";
+import { List } from "antd";
+import styles from "./Cart.module.scss";
+import CartCard from "./CartCard";
+import { useLoaderData, useNavigate } from "react-router-dom";
+import { DeleteFilled } from "@ant-design/icons";
+import { deleteCartElement } from "../../api/api";
 
 function Cart() {
-    //Ideas para armar el cart
+    let products = useLoaderData();
+    let navigate = useNavigate();
 
-    // En el boton AddToCart, tenemos que hacer que se haga un request de tipo post hacia el servidor
-    // con el ID del producto en cuestion y que impacte en la base de datos del usuario dentro de una
-    // propiedad llamada "cart"
+    const handleClick = (id, size) => {
+        deleteCartElement({
+            id: id,
+            size: size,
+        });
+        navigate(0);
+    };
 
-    //
+    // Falta resolver:
 
-    return <div>Cart</div>;
+    // Si seguimos actualizando con el useNavigate() o lo cambiamos
+    // Restringir la cantidad minima a 0, o si es cero eliminar el producto del carrito
+    // Agregar boton de Finalizar Compra
+
+    return (
+        <div className={styles.cart}>
+            <List
+                className={styles.cartList}
+                bordered={true}
+                header={<div className={styles.cartHeader}>Shopping Cart</div>}
+                footer={
+                    <div className={styles.cartFooter}>
+                        <div>Total:</div>
+                        <div>
+                            $
+                            {products.reduce(
+                                (total, product) =>
+                                    total + product.price * product.units,
+                                0
+                            )}
+                        </div>
+                    </div>
+                }
+                dataSource={products.map((product) => (
+                    <div className={styles.cartItems}>
+                        <CartCard product={product} />
+                        <DeleteFilled
+                            className={styles.deleteIcon}
+                            onClick={() =>
+                                handleClick(product.id, product.size)
+                            }
+                        />
+                    </div>
+                ))}
+                renderItem={(product) => <List.Item>{product}</List.Item>}
+            />
+        </div>
+    );
 }
 
 export default Cart;

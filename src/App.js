@@ -13,6 +13,7 @@ import {
     useNavigation,
 } from "react-router-dom";
 import {
+    getUserCart,
     requestCollections,
     requestMen,
     requestProduct,
@@ -68,6 +69,7 @@ export const router = createHashRouter(
                 {
                     path: "cart",
                     element: <Cart />,
+                    loader: getUserCart,
                 },
             ],
         },

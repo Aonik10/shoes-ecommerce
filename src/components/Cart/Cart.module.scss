@@ -1,0 +1,101 @@
+@import "../../App.module.scss";
+
+.cart {
+    margin: 50px;
+    display: flex;
+    justify-content: center;
+
+    .cartList {
+        width: 740px;
+    }
+
+    .cartHeader {
+        font-size: 25px;
+        margin: 0 24px
+    }
+
+    .cartFooter {
+        display: flex;
+        justify-content: space-between;
+        font-size: 30px;
+        margin: 0 24px
+    }
+
+    .cartItems {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .deleteIcon {
+            margin: 26px;
+            cursor: pointer;
+
+            svg {
+                width: 25px;
+                height: 25px;
+                color: $bg-dark-color
+            }
+        }
+    }
+}
+
+.cartCard {
+    margin: 0;
+    display: flex;
+    flex: 1;
+    
+    .cardContent{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .productDetails {
+            display: flex;
+
+            img {
+                width: 75px;
+                border-radius: 15px;
+                margin-right: 24px;
+                cursor: pointer;
+            }
+
+            h1 {
+                font-size: 22px;
+            }
+        }
+
+        .editQty {
+            margin-right: 24px;
+
+            .inputNumber {
+                width: 120px;
+
+                input {
+                    text-align: center;
+                    height: 40px;
+                }
+                
+            }
+
+            button {
+                font-size: 20px;
+                font-family: 'Courier New';
+                font-weight: 700;
+            }
+        }
+
+        .amount {
+            font-size: 22px;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            width: 300px;
+
+            
+        }
+    }
+    
+}

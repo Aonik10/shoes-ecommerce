@@ -20,18 +20,30 @@ const Designs = () => {
                 </Link>
             </div>
             <div className={styles.designsGrid}>
-                <DesignCard img={rampage} model="RAMPAGE BLUE" price="$150" />
                 <DesignCard
+                    to="/collections/64417607ff0a651d0cf82080"
+                    img={rampage}
+                    model="RAMPAGE BLUE"
+                    price="$150"
+                />
+                <DesignCard
+                    to="/collections/64417706ff0a651d0cf82088"
                     img={keepgoing}
                     model="KEEP GOING EDITION"
                     price="$145"
                 />
                 <DesignCard
+                    to="/collections/64417841ff0a651d0cf820a0"
                     img={walker}
                     model="FOOTPRINT WALKER"
                     price="$138"
                 />
-                <DesignCard img={redhot} model="REDHOT FALCON" price="$115" />
+                <DesignCard
+                    to="/collections/644177c1ff0a651d0cf8209c"
+                    img={redhot}
+                    model="REDHOT FALCON"
+                    price="$115"
+                />
             </div>
         </div>
     );

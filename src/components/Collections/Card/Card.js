@@ -7,8 +7,8 @@ const Card = ({ product }) => {
 
     return (
         // mi duda ahora es, como paso una propiedad por medio de un link al component Product
-        <div className={styles.card} key={product.id}>
-            <Link to={"/collections/" + product.id}>
+        <div className={styles.card} key={product._id}>
+            <Link to={"/collections/" + product._id}>
                 <img
                     src={hovering ? product.imgs.diagonal : product.imgs.side}
                     alt=""

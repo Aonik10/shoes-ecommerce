@@ -11,22 +11,46 @@ import { Tooltip } from "antd";
 
 const Footer = () => {
     let socialMedia = [
-        { color: "blue", title: "Facebook", component: FacebookOutlined },
-        { color: "skyblue", title: "Twitter", component: TwitterOutlined },
-        { color: "purple", title: "Instagram", component: InstagramOutlined },
-        { color: "red", title: "Youtube", component: YoutubeOutlined },
+        {
+            color: "blue",
+            title: "Facebook",
+            link: "https://www.facebook.com/emi.pellegrino.3/",
+            component: FacebookOutlined,
+        },
+        {
+            color: "skyblue",
+            title: "Twitter",
+            link: "https://twitter.com/EmiPellegrino1",
+            component: TwitterOutlined,
+        },
+        {
+            color: "purple",
+            title: "Instagram",
+            link: "https://www.instagram.com/emipellegrino3/",
+            component: InstagramOutlined,
+        },
+        {
+            color: "red",
+            title: "Youtube",
+            link: "https://www.youtube.com/",
+            component: YoutubeOutlined,
+        },
     ];
 
     return (
         <div className={styles.footer}>
             <div className={styles.socialMedia}>
-                {socialMedia.map((media) => (
+                {socialMedia.map((media, index) => (
                     <Tooltip
+                        key={index}
                         title={media.title}
                         color={media.color}
                         mouseEnterDelay={0}
                     >
-                        <media.component style={{ color: media.color }} />
+                        <media.component
+                            style={{ color: media.color }}
+                            onClick={() => window.location.replace(media.link)}
+                        />
                     </Tooltip>
                 ))}
             </div>
