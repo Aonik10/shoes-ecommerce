@@ -6,6 +6,8 @@ import {
     InstagramOutlined,
     TwitterOutlined,
     YoutubeOutlined,
+    GithubFilled,
+    LinkedinOutlined,
 } from "@ant-design/icons";
 import { Tooltip } from "antd";
 
@@ -30,10 +32,16 @@ const Footer = () => {
             component: InstagramOutlined,
         },
         {
-            color: "red",
-            title: "Youtube",
-            link: "https://www.youtube.com/",
-            component: YoutubeOutlined,
+            color: "#0e76a8",
+            title: "LinkedIn",
+            link: "https://www.linkedin.com/in/emipellegrino1/",
+            component: LinkedinOutlined,
+        },
+        {
+            color: "black",
+            title: "GitHub",
+            link: "https://github.com/Aonik10",
+            component: GithubFilled,
         },
     ];
 
@@ -55,7 +63,7 @@ const Footer = () => {
                 ))}
             </div>
             <div>
-                <CompanyInfo url="/contact" title="Contact us" />
+                <CompanyInfo url="/contact" title="Contact Us" />
                 <CompanyInfo url="/about" title="Terms of Use" />
                 <CompanyInfo url="/about" title="Privacy Policy" />
                 <div className={styles.copyright}>

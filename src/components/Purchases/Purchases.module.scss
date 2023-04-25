@@ -1,0 +1,51 @@
+@import "../../App.module.scss";
+
+.purchases {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 50px auto;
+    width: 700px;
+
+    .purchaseCard {
+        margin: 10px 0;
+
+        .purchaseDetails {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            
+            p {
+                font-family: $font-family-terciary;
+                color: $font-color-dark
+            }
+
+            .productDetails {
+                display: flex;
+                align-items: center;
+                min-width: 300px;
+    
+                img {
+                    width: 75px;
+                    border-radius: 15px;
+                    margin-right: 24px;
+                    cursor: pointer;
+                }
+        
+            }
+
+            .moreDetails {
+                display: flex;
+                min-width: 250px;
+                justify-content: space-between;
+                align-items: center;
+
+                .deliveryStatus{
+                    color: #d1a504
+                }
+            }
+        }
+    }
+
+    
+}

@@ -4,13 +4,14 @@ import cart from "./shopping-cart.svg";
 import heart from "./heart.svg";
 import { addToCart } from "../../api/api";
 import { useNavigate } from "react-router-dom";
+import { Button } from "antd";
 
 export function AddToCart({ id, size }) {
     let navigate = useNavigate();
 
-    const handleClick = () => {
+    const handleClick = async () => {
         let body = { id, size };
-        addToCart(body);
+        await addToCart(body);
         navigate("/cart");
     };
 
@@ -31,4 +32,8 @@ export function AddtoFav() {
             <img src={heart} alt="" />
         </button>
     );
+}
+
+export function Continue() {
+    return <Button className={styles.continueBtn}>Continue</Button>;
 }

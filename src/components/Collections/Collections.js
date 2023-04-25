@@ -1,22 +1,27 @@
 import styles from "./Collections.module.scss";
 import Card from "./Card/Card";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useLocation } from "react-router-dom";
 
 const Collections = () => {
     // solved with this guide
     // https://beta.reactrouter.com/en/dev/guides/deferred#the-problem
     let products = useLoaderData();
-    // let products = useMemo(() => requestCollections(), []);
+    let location = useLocation().pathname.substring(1);
 
     return (
         <div className={styles.collections}>
             <div>
-                <h1>All Collections</h1>
+                <h1>
+                    {"All " +
+                        (location === "collections"
+                            ? location
+                            : location + " collections")}
+                </h1>
                 <h2>Find the best option for you</h2>
             </div>
             <div className={styles.cards}>
                 {products.map((product) => (
-                    <Card product={product} />
+                    <Card product={product} key={product._id} />
                 ))}
             </div>
         </div>

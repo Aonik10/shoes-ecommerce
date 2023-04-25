@@ -1,11 +1,12 @@
 import React from "react";
 import styles from "./CompanyInfo.module.scss";
+import { Link } from "react-router-dom";
 
 const CompanyInfo = (props) => {
     return (
-        <a className={styles.link} href={props.url}>
+        <Link className={styles.link} to={props.url}>
             {props.title}
-        </a>
+        </Link>
     );
 };
 

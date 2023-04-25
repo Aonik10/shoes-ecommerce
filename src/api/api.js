@@ -4,17 +4,19 @@ import { router } from "../App";
 import { store } from "../app/store";
 import { sessionLogout } from "../features/sessionSlice";
 
-const SERVER_URL = "http://186.124.184.171:4000/api";
+const SERVER_URL = "http://localhost:4000/api"; //186.124.184.171
 const COLLECTIONS_PATH = "/collections";
 const MEN_PATH = "/collections/men";
 const WOMEN_PATH = "/collections/women";
 const LOGIN_PATH = "/auth/login";
 const LOGOUT_PATH = "/auth/logout";
+const SEND_EMAIL = "/auth//send-email";
 const ADD_TO_CART_PATH = "/user/addtocart";
 const GET_USER_CART_PATH = "/user/cart";
-const MODIFY_CART_BY_VALUE = "/user/modify-cart-unit-by-value";
-const MODIFY_CART_BY_ONE = "/user/modify-cart-unit-by-one";
+const MODIFY_CART_UNITS = "/user/modify-cart-units";
 const DELETE_CART_ELEMENT = "/user/remove-from-cart";
+const CREATE_PURCHASE = "/user/create-purchase";
+const GET_PURCHASES = "/user/purchases";
 
 function wait(ms) {
     return new Promise((resolve) => {
@@ -38,7 +40,7 @@ async function request(url, method = "GET", body = {}) {
     }
     if (status > 299) throw new Error("Invalid status: " + status);
     const data = await response.json();
-    await wait(0);
+    await wait(200);
     return data;
 }
 
@@ -88,17 +90,8 @@ export async function getUserCart() {
     return response;
 }
 
-export async function modifyCartByOne(body) {
-    let response = await request(SERVER_URL + MODIFY_CART_BY_ONE, "PUT", body);
-    return response;
-}
-
-export async function modifyCartByValue(body) {
-    let response = await request(
-        SERVER_URL + MODIFY_CART_BY_VALUE,
-        "PUT",
-        body
-    );
+export async function modifyCartUnits(body) {
+    let response = await request(SERVER_URL + MODIFY_CART_UNITS, "PUT", body);
     return response;
 }
 
@@ -108,5 +101,20 @@ export async function deleteCartElement(body) {
         "DELETE",
         body
     );
+    return response;
+}
+
+export async function createPurchase() {
+    let response = await request(SERVER_URL + CREATE_PURCHASE, "POST");
+    return response;
+}
+
+export async function getPurchases() {
+    let response = await request(SERVER_URL + GET_PURCHASES);
+    return response;
+}
+
+export async function sendEmail(body) {
+    let response = await request(SERVER_URL + SEND_EMAIL, "POST", body);
     return response;
 }

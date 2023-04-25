@@ -37,11 +37,11 @@ function ProductSlider() {
                 responsive={responsive}
                 infinite={true}
                 autoPlay={true}
-                autoPlaySpeed={5000}
+                autoPlaySpeed={3000}
                 containerClass={styles.carouselContainer}
             >
                 {products.map((product) => (
-                    <div className={styles.card}>
+                    <div className={styles.card} key={product._id}>
                         <Card product={product} />
                     </div>
                 ))}

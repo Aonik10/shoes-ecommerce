@@ -19,10 +19,10 @@ function UserMenu({ name }) {
                 <p>{"Hi " + name + "!"}</p>
             </div>
             <li>
-                <NavBarLink url="/collections" content="Purchases" />
+                <NavBarLink url="/purchases" content="Purchases" />
             </li>
             <li>
-                <NavBarLink url="/collections" content="My account" />
+                <NavBarLink url="/settings" content="My account" />
             </li>
             <li onClick={handleLogout}>
                 <NavBarLink url="/" content="Logout" />

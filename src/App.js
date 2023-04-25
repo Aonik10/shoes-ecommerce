@@ -13,6 +13,8 @@ import {
     useNavigation,
 } from "react-router-dom";
 import {
+    getPurchases,
+    createPurchase,
     getUserCart,
     requestCollections,
     requestMen,
@@ -22,6 +24,11 @@ import {
 import Spinner from "./components/Collections/Spinner/Spinner";
 import Error from "./components/Error/Error";
 import Cart from "./components/Cart/Cart";
+import Checkout from "./components/Checkout/Checkout";
+import CheckoutResult from "./components/Checkout/CheckoutResult";
+import Contact from "./components/Contact/Contact";
+import Purchases from "./components/Purchases/Purchases";
+import UserSettings from "./components/UserSettings/UserSettings";
 
 export const router = createHashRouter(
     [
@@ -64,12 +71,31 @@ export const router = createHashRouter(
                 },
                 {
                     path: "contact",
-                    element: <About />,
+                    element: <Contact />,
                 },
                 {
                     path: "cart",
                     element: <Cart />,
                     loader: getUserCart,
+                },
+                {
+                    path: "cart/checkout",
+                    element: <Checkout />,
+                    loader: getUserCart,
+                },
+                {
+                    path: "cart/checkout/result",
+                    element: <CheckoutResult />,
+                    loader: createPurchase,
+                },
+                {
+                    path: "purchases",
+                    element: <Purchases />,
+                    loader: getPurchases,
+                },
+                {
+                    path: "settings",
+                    element: <UserSettings />,
                 },
             ],
         },

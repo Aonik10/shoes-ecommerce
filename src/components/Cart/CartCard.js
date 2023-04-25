@@ -1,33 +1,34 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import Card from "antd/es/card/Card";
 import { InputNumber } from "antd";
 import styles from "./Cart.module.scss";
-import {
-    deleteCartElement,
-    modifyCartByOne,
-    modifyCartByValue,
-} from "../../api/api";
+import { deleteCartElement, modifyCartUnits } from "../../api/api";
 import { useNavigate } from "react-router-dom";
+import { Spin } from "antd";
 
-function CartCard({ product }) {
+function CartCard({ product, refresh }) {
     //let [value, setValue] = useState(product.units);
     let navigate = useNavigate();
     const ref = useRef(product.units);
 
-    const handleClick = (cb, value) => {
-        if (parseInt(ref.current.value) + value < 1) {
-            deleteCartElement({
+    let [loading, setLoading] = useState(false);
+
+    const handleClick = async (value) => {
+        setLoading(true);
+        if (value < 1) {
+            await deleteCartElement({
                 id: product.id,
                 size: product.size,
             });
         } else {
-            cb({
+            await modifyCartUnits({
                 id: product.id,
                 size: product.size,
                 value: value,
             });
         }
-        navigate(0);
+        await refresh();
+        setLoading(false);
     };
 
     return (
@@ -44,22 +45,33 @@ function CartCard({ product }) {
                         <p>{product.size + " AR"}</p>
                     </div>
                 </div>
+                <Spin
+                    className={styles.spin}
+                    style={{ visibility: loading ? "visible" : "hidden" }}
+                />
                 <div className={styles.editQty}>
                     <InputNumber
                         ref={ref}
                         className={styles.inputNumber}
                         controls={false}
-                        onChange={(v) => handleClick(modifyCartByValue, v)}
+                        disabled={loading}
+                        onChange={(v) => handleClick(v)}
                         addonAfter={
                             <button
-                                onClick={() => handleClick(modifyCartByOne, -1)}
+                                disabled={loading}
+                                onClick={() =>
+                                    handleClick(parseInt(ref.current.value) - 1)
+                                }
                             >
                                 -
                             </button>
                         }
                         addonBefore={
                             <button
-                                onClick={() => handleClick(modifyCartByOne, 1)}
+                                disabled={loading}
+                                onClick={() =>
+                                    handleClick(parseInt(ref.current.value) + 1)
+                                }
                             >
                                 +
                             </button>

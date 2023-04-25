@@ -1,37 +1,24 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
-export function usePromise(request) {
-    let [promiseState, setPromiseState] = useState({ state: "Pending" });
-    useEffect(() => {
-        (async () => {
-            try {
-                let value = await request();
-                setPromiseState({ state: "Success", data: value });
-            } catch {
-                setPromiseState({ state: "Error" });
-            }
-        })(); // defino la funcion y la llamo inmediatamente
-    }, [setPromiseState, request]);
-    return promiseState;
-}
-
-export function useLocalStorage(key, initialValue) {
-    let [storedValue, setStoredValue] = useState(() => {
+export function usePromise(request, initialValue) {
+    let [promiseState, setPromiseState] = useState(
+        initialValue !== undefined
+            ? { state: "Success", data: initialValue }
+            : { state: "Pending" }
+    );
+    // estudiar
+    let refresh = useCallback(async () => {
         try {
-            const item = window.localStorage.getItem(key);
-            return item ? JSON.parse(item) : initialValue;
-        } catch (error) {
-            return initialValue;
+            setPromiseState({ state: "Pending" });
+            let value = await request();
+            setPromiseState({ state: "Success", data: value });
+        } catch {
+            setPromiseState({ state: "Error" });
         }
-    });
-
-    let setValue = (value) => {
-        try {
-            setStoredValue(value);
-            window.localStorage.setItem(key, JSON.stringify(value));
-        } catch (error) {
-            console.error(error);
-        }
-    };
-    return [storedValue, setValue];
+    }, [request, setPromiseState]);
+    useEffect(
+        () => initialValue !== undefined && refresh(),
+        [refresh, initialValue]
+    );
+    return [promiseState, refresh];
 }

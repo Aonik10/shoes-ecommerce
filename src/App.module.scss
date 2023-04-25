@@ -1,6 +1,6 @@
 $font-color-pink: #e56089;
 $font-color-dark: #20333f;
-$bg-yellow-color: #fff8bc;
+$bg-yellow-color: #d1a504;
 $bg-dark-color: #0f171c;
 $filter-bg-dark-color: invert(5%) sepia(4%) saturate(6336%) hue-rotate(161deg) brightness(96%) contrast(92%);
 $filter-to-white: invert(100%) sepia(100%) saturate(8%) hue-rotate(194deg) brightness(106%) contrast(100%);
@@ -32,4 +32,10 @@ button {
 
 .contentWrap {
     padding-bottom: $footer-height
+}
+
+@mixin unique-container {
+    margin: 50px;
+    display: flex;
+    justify-content: center;
 }

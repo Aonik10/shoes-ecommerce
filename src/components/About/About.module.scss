@@ -1,3 +1,45 @@
+@import "../../App.module.scss";
+ 
  .about {
-    
+    @include unique-container();
+
+    .description {
+        width: 700px;
+
+        h1 {
+            text-align: center;
+        }
+
+        p, a {
+            font-family: $font-family-terciary;
+            text-align: justify;
+        }
+
+        ol, ul {
+            margin-left: 15px;
+
+            li {
+                font-family: $font-family-terciary;
+                font-style: italic;
+            }
+        }
+
+        table {
+
+            margin: auto;
+
+            * {
+                font-family: $font-family-terciary;
+            }
+
+            th {
+                width: 200px;
+                text-align: center;
+                border-bottom: 1px solid $bg-dark-color;
+            }
+            td {
+                text-align: center;
+            }
+        }
+    }
  }
