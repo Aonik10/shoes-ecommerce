@@ -4,7 +4,7 @@ import { router } from "../App";
 import { store } from "../app/store";
 import { sessionLogout } from "../features/sessionSlice";
 
-const SERVER_URL = "http://localhost:4000/api"; //186.124.184.171
+const SERVER_URL = "http://186.124.184.171:4000/api"; //186.124.184.171
 const COLLECTIONS_PATH = "/collections";
 const MEN_PATH = "/collections/men";
 const WOMEN_PATH = "/collections/women";
