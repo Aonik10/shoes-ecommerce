@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./Checkout.module.scss";
 import { Button, Descriptions } from "antd";
 import { useSelector } from "react-redux";
@@ -8,12 +8,9 @@ function Checkout() {
     const { data } = useSelector((state) => state.session);
     let products = useLoaderData();
     let navigate = useNavigate();
-    let [loading, setLoading] = useState(false);
 
     const handleClick = async (func) => {
-        setLoading(true);
         await func();
-        setLoading(false);
     };
 
     return (

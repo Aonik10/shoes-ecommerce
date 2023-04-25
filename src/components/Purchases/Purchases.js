@@ -9,7 +9,7 @@ function Purchases() {
     return (
         <div className={styles.purchases}>
             {purchases.map((purchase) => (
-                <PurchaseCard purchase={purchase} key={purchase.id} />
+                <PurchaseCard purchase={purchase} key={purchase.orderId} />
             ))}
         </div>
     );

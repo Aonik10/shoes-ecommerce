@@ -5,7 +5,6 @@ import {
     FacebookOutlined,
     InstagramOutlined,
     TwitterOutlined,
-    YoutubeOutlined,
     GithubFilled,
     LinkedinOutlined,
 } from "@ant-design/icons";
