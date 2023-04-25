@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import styles from "./Contact.module.scss";
 import { Button, Input, message } from "antd";
 import { sendEmail } from "../../api/api";
@@ -6,7 +6,6 @@ import { sendEmail } from "../../api/api";
 const { TextArea } = Input;
 
 function Contact() {
-    let ref = useRef();
     // encontrar la forma de resetear el form (el Form tiene un "resetForm() method")
     const [messageApi, contextHolder] = message.useMessage();
 
@@ -39,13 +38,6 @@ function Contact() {
             email: "",
             message: "",
         });
-        ref.current[0].value = "";
-        ref.current[1].value = "";
-        ref.current[2].value = "";
-
-        ref.current.map((item, index) =>
-            index < 3 ? (item.value = "") : null
-        );
     };
 
     return (
@@ -69,11 +61,7 @@ function Contact() {
                     private message on any of my social media linked below, at
                     the webpage's footer.
                 </p>
-                <form
-                    className={styles.formContainer}
-                    onSubmit={handleSubmit}
-                    ref={ref}
-                >
+                <form className={styles.formContainer} onSubmit={handleSubmit}>
                     <div className={styles.contactForm}>
                         <div className={styles.userData}>
                             <Input
@@ -82,6 +70,7 @@ function Contact() {
                                 placeholder="Your name"
                                 allowClear
                                 onChange={handleChange}
+                                value={emailMessage.name}
                                 required
                             />
                             <Input
@@ -89,6 +78,7 @@ function Contact() {
                                 placeholder="Your email"
                                 allowClear
                                 onChange={handleChange}
+                                value={emailMessage.email}
                                 required
                             />
                         </div>
@@ -98,6 +88,7 @@ function Contact() {
                             placeholder="Write a message"
                             allowClear
                             className={styles.mt20}
+                            value={emailMessage.message}
                             required={true}
                             style={{ resize: "none" }}
                         />
