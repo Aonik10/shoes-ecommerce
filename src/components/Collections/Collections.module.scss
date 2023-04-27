@@ -26,6 +26,20 @@
 		grid-template-columns: repeat(2, 1fr);
 	}
 }
+
+@media screen and (max-width: 550px) {
+	.collections {
+		padding: 15px;
+
+		h1 {
+			font-size: 25px;
+		}
+		
+		h2 {
+			font-size: 18px;
+		}
+	}
+}
 /*
 .cards {
     display: grid;

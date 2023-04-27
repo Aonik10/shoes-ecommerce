@@ -8,6 +8,7 @@
     margin: auto;
 
     div {
+        margin: 10px;
 
         img {
             width: 600px;
@@ -15,5 +16,22 @@
             object-fit: cover;
         }
         
+    }
+}
+
+@media only screen and (max-width: 925px) {
+    .features {
+        grid-template-columns: repeat(2, 1fr);
+
+        div {
+            
+            img {
+                max-width: 400px;
+                width: 100%;
+                height: 400px;
+                column-gap: 0
+            }
+            
+        }
     }
 }

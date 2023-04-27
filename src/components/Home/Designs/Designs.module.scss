@@ -45,3 +45,36 @@
         row-gap: 25px;
     }
 }
+
+@media only screen and (max-width: 925px) {
+    .designs {
+        flex-direction: column;
+        text-align: center;
+
+        .msgSection {
+            width: auto;
+        }
+
+        .mainMsg {
+            font-size: 45px;
+        }
+
+        .secondMsg {
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+
+        .btn {
+            position: absolute;
+            visibility: hidden;
+            z-index: -1;
+        }
+
+        .designsGrid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: auto; 
+            align-self: center;
+        }
+    }
+}

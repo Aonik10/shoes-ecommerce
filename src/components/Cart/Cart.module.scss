@@ -54,13 +54,12 @@
     display: flex;
     flex: 1;
     
-    .cardContent{
+    .cardContent {
         display: flex;
         justify-content: space-between;
         align-items: center;
 
-        .productDetails {
-            display: flex;
+        .productPhoto {
 
             img {
                 width: 75px;
@@ -69,51 +68,150 @@
                 cursor: pointer;
             }
 
+        }
+
+        .productDetails {
+            display: flex;
+            align-items: center;
+
             h1 {
+                font-size: 22px;
+            }
+
+            .spin {
+                margin: 10px;
+    
+                span {
+    
+                    i {
+                        background-color: $bg-dark-color
+                    }
+                }
+            }
+    
+            .editQty {
+                margin-right: 24px;
+                display: flex;
+    
+                .inputNumber {
+                    width: 120px;
+    
+                    input {
+                        text-align: center;
+                        height: 40px;
+                    }
+                    
+                }
+    
+                button {
+                    font-size: 20px;
+                    font-family: 'Courier New';
+                    font-weight: 700;
+                }
+            }
+    
+            .amount {
                 font-size: 22px;
             }
         }
 
-        .spin {
-            margin: 10px;
+    }
 
-            span {
+    .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        width: 260px;
+    }
+    
+}
 
-                i {
-                    background-color: $bg-dark-color
-                }
-            }
-        }
+@media screen and (max-width: 760px) {
+    $size: 120px;
 
-        .editQty {
-            margin-right: 24px;
+    .cart {
+        margin: 25px;
 
-            .inputNumber {
-                width: 120px;
+        .cartElements { 
 
-                input {
-                    text-align: center;
-                    height: 40px;
-                }
-                
-            }
-
-            button {
+            .cartHeader {
+                min-width: 250px;
                 font-size: 20px;
-                font-family: 'Courier New';
-                font-weight: 700;
+                margin: 0
+            }
+
+            .cartFooter {
+                font-size: 20px;
+                margin: 0;
+            }
+
+            .cartList {
+                width: auto;
+
+                li {
+                    padding: 0;
+                }
+            }
+
+            .cartItems {
+
+                .deleteIcon {
+                    margin: 5px;
+                }
             }
         }
+    }
 
-        .amount {
-            font-size: 22px;
+    .cartCard {
+        div {
+            padding: 0;
+        }
+        
+        .cardContent {
+
+            .productPhoto {
+
+                img {
+                    width: $size;
+                    margin-right: 14px;
+                }
+            }
+            
+
+            .productDetails {
+                height: 130px;
+                width: 135px;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: start;
+
+                h1 {
+                    font-size: 18px;
+                }
+
+                .editQty {
+
+                    .inputNumber {
+                        order: -1;
+
+                        input {
+                            text-align: center;
+                            height: 35px;
+                        }
+                    }
+                }
+
+                .amount {
+                    font-size: 18px;
+                }
+            }
         }
 
         .content {
             display: flex;
             flex-direction: column;
             justify-content: space-evenly;
-            width: 260px;
+            width: auto;
         }
     }
 }

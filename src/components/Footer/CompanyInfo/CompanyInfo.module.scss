@@ -1,10 +1,19 @@
+@import '../../../App.module.scss';
+
 .link {
-    font-family: 'Titillium Web', sans-serif;
+    font-family: $font-family-terciary;
     text-decoration: none;
     color: white;
     margin: 25px;
 
     &:hover {
         text-decoration: underline;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .link {
+        font-size: 14px;
+        margin: 15px;
     }
 }

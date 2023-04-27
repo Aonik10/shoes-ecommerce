@@ -1,9 +1,10 @@
 @import "../../../App.module.scss";
 
 .cardPhoto {
+    display:flex;
 
     img {
-        width: 300px;
+        max-width: 300px;
         height: 280px;
         object-fit: cover;
         cursor: pointer;
@@ -14,4 +15,32 @@
     display: flex;
     justify-content: space-between;
     font-size: 20px;
+}
+
+@media only screen and (max-width: 925px) {
+    .cardPhoto {
+
+        img {
+            max-width: 250px;
+            max-height: 250px;
+        }
+    }
+
+    .data {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .cardPhoto {
+
+        img {
+            max-width: 160px;
+            max-height: 160px;
+        }
+    }
+
+    .data {
+        font-size: 14px;
+    }
 }

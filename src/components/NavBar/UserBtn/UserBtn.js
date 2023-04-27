@@ -14,7 +14,13 @@ const UserBtn = ({ data }) => {
                     viewMenu ? styles.slideIn : ""
                 }`}
             >
-                {<UserMenu name={data.name} />}
+                {
+                    <UserMenu
+                        name={data.name}
+                        viewMenu={viewMenu}
+                        setViewMenu={setViewMenu}
+                    />
+                }
             </div>
             <Avatar
                 className={styles.userBtn}

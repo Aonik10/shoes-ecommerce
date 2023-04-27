@@ -7,6 +7,7 @@
 .userMenu {
     color: white;
     position: absolute;
+    top: 0%;
     right: 0%;
     background-color: $bg-dark-color;
     height: 99%;
@@ -23,6 +24,14 @@
 }
 
 .userBtn {
+    margin-right: 10px;
     z-index: 1;
     cursor: pointer
+}
+
+@media only screen and (max-width: 600px) {
+    .userMenu {
+        width: 210px;
+    }
+    
 }

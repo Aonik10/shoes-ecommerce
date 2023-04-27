@@ -15,7 +15,7 @@
         margin: 10px auto;
     
         span {
-            margin-left: 25px;
+            margin: 0 12px;
             padding: 6px;
             background-color: white;
             border-radius: 50%;
@@ -36,9 +36,32 @@
     
     .copyright {
         margin-top: 8px;
-        font-family: 'Titillium Web', sans-serif;
+        font-family: $font-family-terciary;
         font-size: 14px;
     }
 }
 
-
+@media screen and (max-width: 550px) {
+    .footer {
+        
+        .socialMedia {
+        
+            span {
+    
+                svg {
+                    width: 25px;
+                    height: 25px;
+        
+                    &:hover {
+                        transform: scale(1.05);
+                    }
+                }
+                
+            }
+         }
+        
+        .copyright {
+            font-size: 12px;
+        }
+    }
+}

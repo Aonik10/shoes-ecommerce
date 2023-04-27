@@ -125,4 +125,56 @@ $photosWidth: 160px;
     }
 }
 
+@media screen and (max-width: 1024px) {
+    
+    $photosWidth: 15vw;
 
+    .mainPhoto {
+    
+        img {
+            width: mainPhotoWidth($photosWidth);
+        } 
+    }
+
+    .allPhotos {
+    
+        img {
+            width: $photosWidth;
+        }
+    }
+
+    .infoContainer {
+        height: mainPhotoWidth($photosWidth);
+        
+    }
+}
+
+@media screen and (max-width: 800px) {
+    $photosWidth: 23vw;
+
+    .product {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .mainPhoto {
+    
+        img {
+            width: mainPhotoWidth($photosWidth);
+        } 
+    }
+
+    .allPhotos {
+    
+        img {
+            width: $photosWidth;
+        }
+    }
+
+    .infoContainer {
+        max-width: mainPhotoWidth($photosWidth);
+        min-width: auto;
+        height: 100%;
+    }
+    
+}

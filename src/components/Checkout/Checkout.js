@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./Checkout.module.scss";
 import { Button, Descriptions } from "antd";
 import { useSelector } from "react-redux";
@@ -8,10 +8,23 @@ function Checkout() {
     const { data } = useSelector((state) => state.session);
     let products = useLoaderData();
     let navigate = useNavigate();
+    let [width, setWidth] = useState(window.innerWidth);
+
+    useEffect(() => {
+        const handleWidth = () => {
+            setWidth(window.innerWidth);
+        };
+        window.addEventListener("resize", handleWidth);
+        return () => {
+            window.removeEventListener("resize", handleWidth);
+        };
+    }, []);
 
     const handleClick = async (func) => {
         await func();
     };
+
+    //let mql = window.matchMedia("screen and (max-width: 740px)");
 
     return (
         <div className={styles.checkout}>
@@ -19,7 +32,7 @@ function Checkout() {
                 className={styles.descriptions}
                 title={"BILLING INFORMATION"}
                 bordered={true}
-                column={2}
+                column={width > 740 ? 2 : 1}
             >
                 <Descriptions.Item label="Name">{data.name}</Descriptions.Item>
                 <Descriptions.Item label="Lastname">

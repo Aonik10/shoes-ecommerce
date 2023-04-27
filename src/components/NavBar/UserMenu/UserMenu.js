@@ -5,10 +5,11 @@ import { useDispatch } from "react-redux";
 import { sessionLogout } from "../../../features/sessionSlice";
 import { logout } from "../../../api/api";
 
-function UserMenu({ name }) {
+function UserMenu({ name, viewMenu, setViewMenu }) {
     const dispatch = useDispatch();
 
     const handleLogout = () => {
+        setViewMenu(false);
         dispatch(sessionLogout());
         logout();
     };
@@ -18,10 +19,10 @@ function UserMenu({ name }) {
             <div className={styles.menuHeader}>
                 <p>{"Hi " + name + "!"}</p>
             </div>
-            <li>
+            <li onClick={() => setViewMenu(false)}>
                 <NavBarLink url="/purchases" content="Purchases" />
             </li>
-            <li>
+            <li onClick={() => setViewMenu(false)}>
                 <NavBarLink url="/settings" content="My account" />
             </li>
             <li onClick={handleLogout}>

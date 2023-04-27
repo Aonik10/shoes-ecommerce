@@ -18,11 +18,11 @@ const DELETE_CART_ELEMENT = "/user/remove-from-cart";
 const CREATE_PURCHASE = "/user/create-purchase";
 const GET_PURCHASES = "/user/purchases";
 
-function wait(ms) {
+/*function wait(ms) {
     return new Promise((resolve) => {
         setTimeout(resolve, ms);
     });
-}
+}*/
 
 async function request(url, method = "GET", body = {}) {
     const response = await fetch(url, {
@@ -40,7 +40,7 @@ async function request(url, method = "GET", body = {}) {
     }
     if (status > 299) throw new Error("Invalid status: " + status);
     const data = await response.json();
-    await wait(200);
+    //await wait(200);
     return data;
 }
 
