@@ -4,7 +4,7 @@
 
 This website is running online at this [link](https://aonik10.github.io/shoes-ecommerce/)
 
-![image](./src/assets/images/footprints.png)
+![image](./src/assets/images/footprints-mobile.png)
 
 ## About the website
 
@@ -27,10 +27,12 @@ This project was made only for learning porpouses. I tried to build a single pag
 ## Upcoming features to be added
 
 1.- Create a sign up form (connected to google auth if posible)\
-2.- Add a menu where the user can manage his profile\
-3.- Add payment methods configuration\
-4.- Make the site fully responsive\
-5.- Make the website looks better (I apologize for the current styles)
+2.- Add a "forgot-password" functionality\
+3.- Add a menu where the user can manage his profile\
+4.- Add payment methods configuration\
+5.- Enable users to save products in favourites\
+6.- Make the website looks better (I apologize for the current styles)\
+7.- Upgrades based on user experience
 
 ## Running locally
 
@@ -43,7 +45,9 @@ npm install
 npm start
 ```
 
-The app should start running in your browser at http://localhost:3000/
+The project should start running in your browser at http://localhost:3000/
+
+The endpoint to the server is https://home-pc.emipellegrino.com/api, the application wont work if the server is down for some reason. Contact with me for more information at emp10999@gmail.com
 
 ## Server side
 
