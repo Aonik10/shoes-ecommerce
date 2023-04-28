@@ -40,12 +40,23 @@
                 }
             }
         }
-    
-        .continueBtn {
-            margin: 10px 0;
-            align-self: flex-end;
-            width: 150px;
+
+        .btnContainer {
+            display: flex;
+            justify-content: space-between;
+
+            .continueBtn, .seeMore {
+                margin: 10px 0;
+                align-self: flex-end;
+                width: 150px;
+            }
+
+            .seeMore {
+                margin-right: 25px;
+            }
         }
+    
+        
     }  
 }
 

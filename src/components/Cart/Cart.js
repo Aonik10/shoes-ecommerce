@@ -74,13 +74,22 @@ function Cart() {
                     ))}
                     renderItem={(product) => <List.Item>{product}</List.Item>}
                 />
-                <Button
-                    className={styles.continueBtn}
-                    disabled={loading || products.length === 0}
-                    onClick={() => navigate("checkout")}
-                >
-                    Continue
-                </Button>
+                <div className={styles.btnContainer}>
+                    <Button
+                        className={styles.seeMore}
+                        disabled={loading || products.length === 0}
+                        onClick={() => navigate("/collections")}
+                    >
+                        See more products
+                    </Button>
+                    <Button
+                        className={styles.continueBtn}
+                        disabled={loading || products.length === 0}
+                        onClick={() => navigate("checkout")}
+                    >
+                        Continue
+                    </Button>
+                </div>
             </div>
         </div>
     );

@@ -8,23 +8,24 @@ function About() {
                 <h1>About this website</h1>
                 <br />
                 <p>
-                    This project was made only for learning porpouse. As a
+                    This project was made only for learning porpouses. As a
                     developer student, i tried to build a single page
                     application where any people can navigate through, but only
-                    ones with a registered username could interact with the page
-                    to build a cart picking up products.
+                    ones with a registered username must be able to interact
+                    with the page, selecting products and build a cart.
                 </p>
                 <br />
                 <p>
                     "FOOTPRINTS" is a fake company which sells sport shoes. I
-                    had to build my own database of products just to be able to
+                    had to build my own database of products just in order to
                     work with a server which provides the datasource to the
                     client-side application.
                 </p>
                 <br />
                 <p>
-                    In order to test this website, you can try logging in with
-                    some of the registered users:
+                    Registration of new users is not available. In order to test
+                    this website, you can try logging in with some of the
+                    registered users:
                 </p>
                 <br />
                 <table>
@@ -35,7 +36,7 @@ function About() {
                         </tr>
 
                         <tr>
-                            <td>emp10999@gmail.com</td>
+                            <td>user@gmail.com</td>
                             <td>password123</td>
                         </tr>
                         <tr>
@@ -50,8 +51,8 @@ function About() {
                 </table>
                 <br />
                 <p>
-                    The main frameworks and libraries used to develop this
-                    website are the followings:
+                    The main frameworks and libraries I used to develop this
+                    website are the following:
                 </p>
                 <br />
                 <ol>
@@ -66,17 +67,9 @@ function About() {
                     </li>
                     <li>MongoDB and mongoose, as database framework</li>
                     <li>Sass and css modules for styling</li>
-                    <li>Ant-Design, an useful component library</li>
+                    <li>Ant-Design, a useful component library</li>
                 </ol>
 
-                <br />
-                <p>
-                    In my way developing this app, i found many resources to
-                    improve the website's user experience. As an example, i
-                    realize that there exists some libraries of react components
-                    ready to use, like boostrap or ant-design which i used in
-                    some components of this application.
-                </p>
                 <br />
                 <p>
                     In order to upgrade this application, i should add some new
@@ -84,17 +77,16 @@ function About() {
                 </p>
                 <br />
                 <ol>
-                    <li>
-                        Create a sign up form (connected to google auth if
-                        posible)
-                    </li>
+                    <li>Create a sign up form (add google authentication)</li>
+                    <li>Add a "forgot-password" functionality</li>
                     <li>Add a menu where the user can manage his profile</li>
                     <li>Add payment methods configuration</li>
-                    <li>Make the site fully responsive</li>
+                    <li>Enable users to save products in favourites</li>
                     <li>
                         Make the website looks better (I apologize for the
                         current styles)
                     </li>
+                    <li>Upgrades based on user experience</li>
                 </ol>
                 <br />
                 <p>

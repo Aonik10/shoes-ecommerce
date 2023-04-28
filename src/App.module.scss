@@ -11,7 +11,6 @@ $font-family-terciary: 'Titillium Web', sans-serif;
 $footer-height: 150px;
 
 * {
-    font-family: $font-family-main;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -28,6 +27,10 @@ button {
     position: relative;
     min-height: 100vh;
     overflow-x: hidden;
+
+    * {
+        font-family: $font-family-main;
+    }
 }
 
 .contentWrap {

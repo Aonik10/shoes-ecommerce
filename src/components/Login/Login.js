@@ -1,25 +1,22 @@
-import React, { useState } from "react";
+import { LockOutlined, UserOutlined } from "@ant-design/icons";
+import { Button, Checkbox, Form, Input } from "antd";
 import styles from "./Login.module.scss";
+import logo from "../../assets/images/logo-footprints-2.png";
 import { login } from "../../api/api";
-import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
 import { sessionLogin } from "../../features/sessionSlice";
 
-const Login = () => {
+function Login() {
     // init settings and hooks
     const dispatch = useDispatch();
     const navigate = useNavigate();
     let [error, setError] = useState(null);
 
-    // functions to be used
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        let body = {
-            username: e.target.username.value,
-            password: e.target.password.value,
-        };
+    const handleSubmit = async (values) => {
         try {
-            let state = await login(body);
+            let state = await login(values);
             if (state.status === "Success") {
                 dispatch(sessionLogin({ logged: true, data: state.data }));
                 navigate("/");
@@ -31,43 +28,71 @@ const Login = () => {
 
     return (
         <div className={styles.login}>
-            <form onSubmit={handleSubmit}>
-                <h2>Login</h2>
-                <div className={styles.formGroup}>
-                    <label htmlFor="username">Username</label>
-                    <input
-                        type="text"
-                        id="username"
-                        name="username"
-                        placeholder="email@footprints.com"
-                        required
-                    />
-                </div>
-                <div className={styles.formGroup}>
-                    <label htmlFor="password">Password</label>
-                    <input
-                        type="password"
-                        id="password"
-                        name="password"
-                        required
-                    />
-                </div>
-                <div className={`${styles.formGroup} ${styles.checkGroup}`}>
-                    <label htmlFor="remember-me">
-                        <input
-                            type="checkbox"
-                            id="remember-me"
-                            name="remember-me"
-                        />{" "}
-                        Remember Me
-                    </label>
-                    <a href="/forgot-password">Forgot Password?</a>
-                </div>
+            <Form
+                name={styles.loginForm}
+                className={styles.loginForm}
+                initialValues={{
+                    remember: true,
+                }}
+                onFinish={handleSubmit}
+            >
+                <img src={logo} alt="" />
                 {error && <p>{error}</p>}
-                <button type="submit">Login</button>
-            </form>
+                <Form.Item
+                    name="username"
+                    rules={[
+                        {
+                            required: true,
+                            message: "Please input your Username!",
+                        },
+                    ]}
+                >
+                    <Input
+                        prefix={
+                            <UserOutlined className={styles.siteFormItemIcon} />
+                        }
+                        placeholder="Username"
+                    />
+                </Form.Item>
+                <Form.Item
+                    name="password"
+                    rules={[
+                        {
+                            required: true,
+                            message: "Please input your Password!",
+                        },
+                    ]}
+                >
+                    <Input.Password
+                        prefix={
+                            <LockOutlined className={styles.siteFormItemIcon} />
+                        }
+                        type="password"
+                        placeholder="Password"
+                    />
+                </Form.Item>
+                <Form.Item>
+                    <Form.Item name="remember" valuePropName="checked" noStyle>
+                        <Checkbox>Remember me</Checkbox>
+                    </Form.Item>
+
+                    <Link className={styles.loginFormForgot} to="/about">
+                        Forgot password
+                    </Link>
+                </Form.Item>
+
+                <Form.Item>
+                    <Button
+                        type="primary"
+                        htmlType="submit"
+                        className={styles.loginFormButton}
+                    >
+                        Log in
+                    </Button>
+                    Or <Link to={"/about"}>register now!</Link>
+                </Form.Item>
+            </Form>
         </div>
     );
-};
-
+}
 export default Login;

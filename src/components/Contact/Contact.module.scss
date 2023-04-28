@@ -39,11 +39,16 @@
             }
 
             .contactForm {
-           
+                
+                input, textarea {
+                    font-family: $font-family-terciary;
+                }
+
                 .userData {
                     display: flex;
                     justify-content: space-between;
                     min-width: 300px;
+                    
                 }
                 
                 .ml20 {

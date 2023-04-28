@@ -47,17 +47,17 @@ function Contact() {
                 <h1>... or contact ME!</h1>
                 <p>
                     My name is Emiliano Pellegrino, im currently living in
-                    Argentina and im looking for a job as full stack developer.
-                    Check out Linkedin{" "}
+                    Argentina and im a full stack developer. Check out my
+                    Linkedin{" "}
                     <a href="https://www.linkedin.com/in/emipellegrino1/">
                         profile
                     </a>
                     .
                 </p>
                 <p>
-                    This proyect was made for learning porpouse. If you liked
+                    This project was made for learning purposes. If you liked
                     it, and you want to send me a message or make contact with
-                    me, feel free to do it submiting this form or sending me a
+                    me, feel free to do it submitting this form or sending me a
                     private message on any of my social media linked below, at
                     the webpage's footer.
                 </p>
