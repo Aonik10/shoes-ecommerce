@@ -26,22 +26,11 @@
     }
 
     .menuLinkContainer {
-        position: absolute;
-        top: 0%;
-        backdrop-filter: blur(5px);
-        display: flex;
-        height: 100%;
-        width: 100vw;
-        order: -1;
-        transform: translateX(-100%);
-        transition: transform 300ms; 
-        z-index: 3;
 
         .menuLink {
             min-width: 550px;
             background-color: white;
             display: flex;
-            flex-direction: column;
             padding: 50px 0px 50px 10px;
             z-index: 3;
     
@@ -86,9 +75,20 @@
         }
 
         .menuLinkContainer{ 
+            position: absolute;
+            top: 0%;
+            backdrop-filter: blur(5px);
+            display: flex;
+            height: 100%;
+            width: 100vw;
+            order: -1;
+            transform: translateX(-100%);
+            transition: transform 300ms; 
+            z-index: 3;
             
             .menuLink {
                 min-width: 170px;
+                flex-direction: column;
     
                 a {
                     padding: 5px;
