@@ -8,7 +8,7 @@ This website is running online at this [link](https://aonik10.github.io/shoes-ec
 
 ## About the website
 
-This project was made only for learning porpouses. I tried to build a single page application where any people can navigate through, but only ones with a registered username could interact with the page to build a cart picking up products.
+This project was made for learning porpouses. As a developer student, I tried to create a single page application where anyone can navigate through, but only ones with a registered user could be able to interact with the page, selecting products and build a cart.
 
 "FOOTPRINTS" is a fake company which sells sport shoes. I had to build my own database of products just to be able to work with a server which provides the datasource to the client-side application.
 

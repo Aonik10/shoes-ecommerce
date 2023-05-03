@@ -3,7 +3,12 @@ import styles from "./NavBar.module.scss";
 
 function Hamburger({ active, setActive }) {
     return (
-        <div className={styles.hamburgerBtn} onClick={() => setActive(!active)}>
+        <div
+            className={`${styles.hamburgerBtn} ${
+                active ? styles.hamburgerBtnActive : ""
+            }`}
+            onClick={() => setActive(!active)}
+        >
             <div
                 className={`${styles.linesHamburgerBtn} ${
                     active ? styles.hamburgerActive : ""

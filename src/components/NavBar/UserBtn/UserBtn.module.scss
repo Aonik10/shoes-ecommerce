@@ -9,29 +9,57 @@
     position: absolute;
     top: 0%;
     right: 0%;
-    background-color: $bg-dark-color;
-    height: 99%;
-    width: 250px;
+    backdrop-filter: blur(2px);
+    height: 100%;
+    width: 100%;
     padding: 10px 25px;
-    font-size: 22px;
-    z-index: 1;
     transform: translateX(100%);
-    transition: transform 500ms
+    transition: transform 300ms;
+
+    .menu {
+        position: absolute;
+        top: 0%;
+        right: 0%;
+        background-color: $bg-dark-color;
+        height: 100%;
+        padding: 10px 25px;
+        width: 250px;
+        font-size: 22px;
+
+        p {
+            margin-bottom: 25px;
+        }
+    
+        li {
+            a {
+                color: white;
+                margin: 0;
+            }
+        }
+        
+    }
 }
 
 .slideIn {
-    transform: translateX(0)
+    z-index: 3;
+    transform: translateX(0);
+    overflow: hidden;
 }
 
 .userBtn {
     margin-right: 10px;
-    z-index: 1;
+    z-index: 3;
     cursor: pointer
 }
 
 @media only screen and (max-width: 600px) {
     .userMenu {
-        width: 210px;
+        width: 100vw;
+        z-index: 3;
+
+        .menu {
+            width: 200px;
+        }
     }
     
 }

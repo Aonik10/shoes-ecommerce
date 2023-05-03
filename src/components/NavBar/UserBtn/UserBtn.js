@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./UserBtn.module.scss";
-import UserMenu from "../UserMenu/UserMenu";
+import UserMenu from "./UserMenu";
 import { useState } from "react";
 import Avatar from "antd/es/avatar/avatar";
 
@@ -14,13 +14,7 @@ const UserBtn = ({ data }) => {
                     viewMenu ? styles.slideIn : ""
                 }`}
             >
-                {
-                    <UserMenu
-                        name={data.name}
-                        viewMenu={viewMenu}
-                        setViewMenu={setViewMenu}
-                    />
-                }
+                {<UserMenu name={data.name} setViewMenu={setViewMenu} />}
             </div>
             <Avatar
                 className={styles.userBtn}

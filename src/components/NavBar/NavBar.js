@@ -17,16 +17,18 @@ const NavBar = () => {
                 <NavBarLink url="/" content="" logo={logo} />
                 <Hamburger active={active} setActive={setActive} />
                 <div
-                    onClick={() => setActive(false)}
-                    className={`${styles.menuLink} ${
-                        active ? styles.menuLinkActive : ""
+                    className={`${styles.menuLinkContainer} ${
+                        active ? styles.containerActive : ""
                     }`}
+                    onClick={() => setActive(false)}
                 >
-                    <NavBarLink url="/collections" content="Collections" />
-                    <NavBarLink url="/men" content="Men" />
-                    <NavBarLink url="/women" content="Women" />
-                    <NavBarLink url="/about" content="About" />
-                    <NavBarLink url="/contact" content="Contact us" />
+                    <div className={styles.menuLink}>
+                        <NavBarLink url="/collections" content="Collections" />
+                        <NavBarLink url="/men" content="Men" />
+                        <NavBarLink url="/women" content="Women" />
+                        <NavBarLink url="/about" content="About" />
+                        <NavBarLink url="/contact" content="Contact us" />
+                    </div>
                 </div>
             </div>
             <div className={styles.navBarMenu}>

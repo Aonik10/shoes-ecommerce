@@ -58,8 +58,8 @@ function Contact() {
                     This project was made for learning purposes. If you liked
                     it, and you want to send me a message or make contact with
                     me, feel free to do it submitting this form or sending me a
-                    private message on any of my social media linked below, at
-                    the webpage's footer.
+                    private message on any of my social media linked below
+                    (footer).
                 </p>
                 <form className={styles.formContainer} onSubmit={handleSubmit}>
                     <div className={styles.contactForm}>

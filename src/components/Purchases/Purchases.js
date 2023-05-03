@@ -2,15 +2,20 @@ import React from "react";
 import styles from "./Purchases.module.scss";
 import { useLoaderData } from "react-router-dom";
 import PurchaseCard from "./PurchaseCard";
+import { Empty } from "antd";
 
 function Purchases() {
     let { purchases } = useLoaderData();
 
     return (
         <div className={styles.purchases}>
-            {purchases.map((purchase) => (
-                <PurchaseCard purchase={purchase} key={purchase.orderId} />
-            ))}
+            {purchases.length == 0 ? (
+                <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} />
+            ) : (
+                purchases.map((purchase) => (
+                    <PurchaseCard purchase={purchase} key={purchase.orderId} />
+                ))
+            )}
         </div>
     );
 }

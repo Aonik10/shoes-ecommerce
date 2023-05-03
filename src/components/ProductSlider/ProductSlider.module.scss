@@ -1,5 +1,12 @@
 @import '../../App.module.scss';
 
+.productSlider {
+
+    button {
+        z-index: 1;
+    }
+}
+
 .productCategory {
     margin: 25px;
     font-family: $font-family-secundary;

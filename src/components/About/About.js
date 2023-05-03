@@ -8,11 +8,11 @@ function About() {
                 <h1>About this website</h1>
                 <br />
                 <p>
-                    This project was made only for learning porpouses. As a
-                    developer student, i tried to build a single page
-                    application where any people can navigate through, but only
-                    ones with a registered username must be able to interact
-                    with the page, selecting products and build a cart.
+                    This project was made for learning porpouses. As a developer
+                    student, I tried to create a single page application where
+                    anyone can navigate through, but only ones with a registered
+                    user could be able to interact with the page, selecting
+                    products and build a cart.
                 </p>
                 <br />
                 <p>

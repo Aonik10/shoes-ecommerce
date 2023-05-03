@@ -1,11 +1,11 @@
 import React from "react";
-import styles from "./UserMenu.module.scss";
-import NavBarLink from "./../NavBarLink/NavBarLink";
+import styles from "./UserBtn.module.scss";
+import NavBarLink from "../NavBarLink/NavBarLink";
 import { useDispatch } from "react-redux";
 import { sessionLogout } from "../../../features/sessionSlice";
 import { logout } from "../../../api/api";
 
-function UserMenu({ name, viewMenu, setViewMenu }) {
+function UserMenu({ name, setViewMenu }) {
     const dispatch = useDispatch();
 
     const handleLogout = () => {
