@@ -9,7 +9,7 @@ function Purchases() {
 
     return (
         <div className={styles.purchases}>
-            {purchases.length == 0 ? (
+            {purchases.length === 0 ? (
                 <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} />
             ) : (
                 purchases.map((purchase) => (
