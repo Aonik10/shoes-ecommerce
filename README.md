@@ -8,9 +8,9 @@ This website is running online at this [link](https://aonik10.github.io/shoes-ec
 
 ## About the website
 
-This project was made for learning porpouses. As a developer student, I tried to create a single page application where anyone can navigate through, but only ones with a registered user could be able to interact with the page, selecting products and build a cart.
+This project was created solely for learning purposes. As a developer student, I attempted to build a single-page application that anyone can navigate through. However, only individuals with a registered username can interact with the page by selecting products and adding them to their cart
 
-"FOOTPRINTS" is a fake company which sells sport shoes. I had to build my own database of products just to be able to work with a server which provides the datasource to the client-side application.
+The application is based on a fictional company called                    "Footprints" that sells sport shoes. I had to create my own product database and a server to provide data to the client-side application.
 
 ## Frameworks used
 
@@ -26,13 +26,13 @@ This project was made for learning porpouses. As a developer student, I tried to
 
 ## Upcoming features to be added
 
-1.- Create a sign up form (connected to google auth if posible)\
-2.- Add a "forgot-password" functionality\
-3.- Add a menu where the user can manage his profile\
-4.- Add payment methods configuration\
-5.- Enable users to save products in favourites\
-6.- Make the website looks better (I apologize for the current styles)\
-7.- Upgrades based on user experience
+1.- Implement a sign-up form, with the option for users to sign up using Google authentication.\
+2.- Add a "forgot password" functionality to allow users to reset their passwords if they forget them.\
+3.- Include a menu where users can manage their profiles, such as updating their personal information or viewing their order history.\
+4.- Add configuration options for payment methods to allow for a smooth checkout process.\
+5.- Enable users to save products to their favorites list for easy access in the future.\
+6.- Improve the website's visual appearance by enhancing the current styles.\
+7.- Upgrades in general, based on user experience
 
 ## Running locally
 

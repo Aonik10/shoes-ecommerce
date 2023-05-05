@@ -8,23 +8,23 @@ function About() {
                 <h1>About this website</h1>
                 <br />
                 <p>
-                    This project was made for learning porpouses. As a developer
-                    student, I tried to create a single page application where
-                    anyone can navigate through, but only ones with a registered
-                    user could be able to interact with the page, selecting
-                    products and build a cart.
+                    This project was created solely for learning purposes. As a
+                    developer student, I attempted to build a single-page
+                    application that anyone can navigate through. However, only
+                    individuals with a registered username can interact with the
+                    page by selecting products and adding them to their cart
                 </p>
                 <br />
                 <p>
-                    "FOOTPRINTS" is a fake company which sells sport shoes. I
-                    had to build my own database of products just in order to
-                    work with a server which provides the datasource to the
+                    The application is based on a fictional company called
+                    "Footprints" that sells sport shoes. I had to create my own
+                    product database and a server to provide data to the
                     client-side application.
                 </p>
                 <br />
                 <p>
-                    Registration of new users is not available. In order to test
-                    this website, you can try logging in with some of the
+                    Currently, new user registration is not available. To test
+                    the website, you can try logging in with one of the
                     registered users:
                 </p>
                 <br />
@@ -72,21 +72,37 @@ function About() {
 
                 <br />
                 <p>
-                    In order to upgrade this application, i should add some new
-                    features like:
+                    To upgrade this application, I'll be adding the following
+                    new features:
                 </p>
                 <br />
                 <ol>
-                    <li>Create a sign up form (add google authentication)</li>
-                    <li>Add a "forgot-password" functionality</li>
-                    <li>Add a menu where the user can manage his profile</li>
-                    <li>Add payment methods configuration</li>
-                    <li>Enable users to save products in favourites</li>
                     <li>
-                        Make the website looks better (I apologize for the
-                        current styles)
+                        Implement a sign-up form, with the option for users to
+                        sign up using Google authentication.
                     </li>
-                    <li>Upgrades based on user experience</li>
+                    <li>
+                        Add a "forgot password" functionality to allow users to
+                        reset their passwords if they forget them.
+                    </li>
+                    <li>
+                        Include a menu where users can manage their profiles,
+                        such as updating their personal information or viewing
+                        their order history.
+                    </li>
+                    <li>
+                        Add configuration options for payment methods to allow
+                        for a smooth checkout process.
+                    </li>
+                    <li>
+                        Enable users to save products to their favorites list
+                        for easy access in the future.
+                    </li>
+                    <li>
+                        Improve the website's visual appearance by enhancing the
+                        current styles.
+                    </li>
+                    <li>Upgrades in general, based on user experience</li>
                 </ol>
                 <br />
                 <p>
